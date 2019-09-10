@@ -21,4 +21,8 @@ public class EmpController {
         return "emp/list";
     }
 
+    public String s(){
+        return "";
+    }
+
 }
