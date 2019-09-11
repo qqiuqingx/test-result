@@ -25,4 +25,7 @@ public class EmpController {
         return "";
     }
 
+    public void  test(){
+        System.out.println("呵呵大");
+    }
 }
