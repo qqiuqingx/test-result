@@ -89,13 +89,19 @@
 									<td>
 										<!--按钮 bootstrap插件-->
 										<a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">编辑</a>
-										<button class="btn btn-sm btn-danger">离职</button>
+
+
+										<button th:attr="del_uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn" >离职</button>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</main>
+				<form id="deleteEmpFrom"   method="post">
+					<input type="hidden" name="_method" value="delete"/>
+
+				</form>
 			</div>
 		</div>
 
@@ -115,6 +121,15 @@
 		<!-- Graphs -->
 		<script type="text/javascript" src="asserts/js/Chart.min.js"></script>
 		<script>
+
+		</script>
+		<script>
+			$(".deleteBtn").click(function () {
+				$("#deleteEmpFrom").attr("action",$(this).attr("del_uri")).submit();
+				return false;
+			});
+		</script>
+	<script>
 			var ctx = document.getElementById("myChart");
 			var myChart = new Chart(ctx, {
 				type: 'line',

@@ -9,9 +9,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,7 +29,7 @@ public class EmpController {
     /*
     *添加员工
     * */
-    @PostMapping("/addemp")
+    @PostMapping("/emp")
     public String addEmp(Employee employee , BindingResult bindingResult){
         System.out.println("新增员工信息为："+employee.toString());
         emps.save(employee);
@@ -64,6 +62,26 @@ public class EmpController {
         Collection<Department> departments= departmentDao.getDepartments();
         model.addAttribute("depts",departments);
         System.out.println("呵呵大");
+        //跳转到修改员工页面
         return "emp/add";
+    }
+
+    /**
+     * 修改员工方法
+     * @param employee
+     * @return
+     */
+
+    @RequestMapping(value = "/emp",method = RequestMethod.PUT)
+    public String modifEmp(Employee employee){
+        System.out.println("修改员工信息为"+employee);
+        emps.save(employee);
+        return "redirect:/emps";
+    }
+    @DeleteMapping("/emp/{id}")
+    public String deleEmp( @PathVariable("id") Integer id){
+        System.out.println("删除员工 ID为:"+id);
+        emps.delete(id);
+        return "redirect:/emps";
     }
 }
