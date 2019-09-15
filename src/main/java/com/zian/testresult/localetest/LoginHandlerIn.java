@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginHandlerIn implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-      String username= (String) request.getSession().getAttribute("username");
+     /* String username= (String) request.getSession().getAttribute("username");
       if (username==null){
-          //重定向到登录页
+         //重定向到登录页
           request.setAttribute("erro","请先登录");
           //getRequestDispatcher获取转发器  forward转发request  和response
           request.getRequestDispatcher("/index").forward(request,response);
@@ -19,7 +19,8 @@ public class LoginHandlerIn implements HandlerInterceptor {
       }else {
           //不为空放行
           return true;
-      }
+      }*/
+      return true;
     }
 
     @Override
