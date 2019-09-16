@@ -7,6 +7,8 @@ package com.zian.testresult.config;
 
 import com.zian.testresult.localetest.LoginHandlerIn;
 import com.zian.testresult.localetest.MyLocalesolver;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
