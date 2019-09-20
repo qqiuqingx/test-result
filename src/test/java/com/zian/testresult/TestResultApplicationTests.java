@@ -23,10 +23,10 @@ public class TestResultApplicationTests {
         Connection connection = dataSource.getConnection();
         //通过数据库的连接操作数据库，实现增删改查（使用Statement类）
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("select * from employee");
+        ResultSet resultSet = statement.executeQuery("select * from StaffInfo1");
         //.处理数据库的返回结果(使用ResultSet类)
         while (resultSet.next()){
-            System.out.println(resultSet.getString("lastName"));
+            System.out.println(resultSet.getString("CompanyName"));
         }
 
 

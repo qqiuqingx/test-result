@@ -18,11 +18,11 @@ public class TestJDBCController {
     JdbcTemplate jdbcTemplate;
     @ResponseBody
     @RequestMapping("/getJDBC")
-    public List<Map<String,Object>> gets(){
+    public Map<String,Object> gets(){
 
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList("SELECT * FROM employee");
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList("SELECT * FROM StaffInfo1");
 
-        return maps;
+        return maps.get(0);
     }
 
 }
