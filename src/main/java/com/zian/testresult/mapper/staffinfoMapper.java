@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Select;
 //指定这是个mapper
 @Mapper
 public interface staffinfoMapper {
-
-    @Select("SELECT * FROM StaffInfo1 where KeyID=#{KeyID}")
+    //查询员工
+   // @Select("SELECT * FROM StaffInfo1 where KeyID=#{KeyID}")
     StaffInfo1 getStaffInfobyKeyID(String KeyID);
 
 

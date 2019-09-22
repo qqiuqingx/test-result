@@ -38,6 +38,7 @@ public class MyExceptionHander {
         maps.put("code","user.status");
         maps.put("message","自定义异常信息");
         request.setAttribute("exit",maps);
+        //request.setAttribute("error",request.getAttributeNames());
         System.out.println("自定义异常完成");
         //转发
         return "forward:/error";

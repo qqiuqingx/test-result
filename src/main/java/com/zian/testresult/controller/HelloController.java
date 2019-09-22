@@ -29,7 +29,7 @@ public class HelloController {
         System.out.println("进入测试异常方法方法");
         if (user.equals("aaa")){
             System.out.println("进入异常判断");
-            throw new UserNotExiException();
+            throw new UserNotExiException("错误");
         }
   /*      map.put("hello","<h1>莎娃迪卡</h1>");
         map.put("user", Arrays.asList("zhangsan","19","四川"));*/

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,14 @@ public class testMybatisController {
 
 
     @RequestMapping("/getStaff/{KeyID}")
-    public StaffInfo1 getStaffInfoByKeyID(@PathVariable("KeyID") String KeyID){
-        return staff.getStaffInfobyKeyID(KeyID);
+    public StaffInfo1 getStaffInfoByKeyID(@PathVariable("KeyID") String KeyID, HttpServletRequest request){
+
+       /* if(KeyID==null||"".equals(KeyID)){
+            System.err.println("参数为空");
+            return new StaffInfo1();
+        }*/
+        StaffInfo1 staffInfobyKeyID = staff.getStaffInfobyKeyID(KeyID, request);
+
+        return staffInfobyKeyID;
     }
 }
