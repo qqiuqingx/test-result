@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.SerializableString;
 
 public class StaffInfo1 {
 
-    private String keyid;
+    private String KeyID;
     private String CompanyNO;
     private String CompanyName;
     private Integer Gender;
@@ -12,6 +12,15 @@ public class StaffInfo1 {
     private  String Name;
     private String StaffNO;
     private  String Phone;
+    private UserInfo1 userInfo1;
+
+    public UserInfo1 getUserInfo1() {
+        return userInfo1;
+    }
+
+    public void setUserInfo1(UserInfo1 userInfo1) {
+        this.userInfo1 = userInfo1;
+    }
 
     public String getName() {
         return Name;
@@ -46,13 +55,12 @@ public class StaffInfo1 {
     }
 
 
-
-    public String getKeyid() {
-        return keyid;
+    public String getKeyID() {
+        return KeyID;
     }
 
-    public void setKeyid(String keyid) {
-        this.keyid = keyid;
+    public void setKeyID(String keyID) {
+        KeyID = keyID;
     }
 
     public String getCompanyNO() {
